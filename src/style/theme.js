@@ -2,7 +2,7 @@
  * @Author: Fangyu Kung
  * @Date: 2024-09-04 14:22:49
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-09-05 01:36:31
+ * @LastEditTime: 2024-09-05 06:08:21
  * @FilePath: /library_seat_tracker/src/style/theme.js
  */
 import { createTheme } from "@mui/material/styles";
@@ -32,8 +32,67 @@ export const theme = createTheme({
     gradient: {
       main: "linear-gradient(315deg, rgba(68, 182, 199, 0.702) 0%, #44B6C7 100%)",
     },
-    success: "#76A732",
-    error: "#D45251",
-    warning: "#FD853A",
+    success: {
+      main: "#76A732",
+    },
+    error: {
+      main: "#D45251",
+    },
+    warning: {
+      main: "#FD853A",
+    },
+  },
+  typography: {
+    fontFamily: '"PingFang TC", "Helvetica", "Arial", sans-serif',
+    h1: {
+      fontSize: "2.25rem",
+      lineHeight: "3rem",
+      fontWeight: 500,
+    },
+    h1SemiBold: {
+      fontSize: "2.25rem",
+      lineHeight: "3rem",
+      fontWeight: 600,
+    },
+    h2: {
+      fontSize: "1.5rem",
+      lineHeight: "2rem",
+      fontWeight: 500,
+    },
+    h2SemiBold: {
+      fontSize: "1.5rem",
+      lineHeight: "2rem",
+      fontWeight: 600,
+    },
+    h3: {
+      fontSize: "1rem",
+      lineHeight: "1.375rem",
+      fontWeight: 500,
+    },
+    h3SemiBold: {
+      fontSize: "1rem",
+      lineHeight: "1.375rem",
+      fontWeight: 600,
+    },
+    body: {
+      fontSize: "0.875rem",
+      lineHeight: "1.375rem",
+      fontWeight: 500,
+    },
+    bodySemiBold: {
+      fontSize: "0.875rem",
+      lineHeight: "1.375rem",
+      fontWeight: 600,
+    },
+    caption: {
+      fontSize: "0.75rem",
+      lineHeight: "1.25rem",
+      fontWeight: 500,
+    },
+    captionSemiBold: {
+      fontSize: "0.75rem",
+      lineHeight: "1.25rem",
+      fontWeight: 600,
+    },
   },
 });
