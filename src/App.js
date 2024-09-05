@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+/*
+ * @Author: Fangyu Kung
+ * @Date: 2024-09-02 03:45:22
+ * @LastEditors: Do not edit
+ * @LastEditTime: 2024-09-05 08:24:24
+ * @FilePath: /library_seat_tracker/src/App.js
+ */
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-function App() {
+import LibraryList from "./pages/LibraryList";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/librarylist" element={<LibraryList />} />
+        {/* <Route exact path="librarylist/:id" element={<LibraryDetail />} /> */}
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

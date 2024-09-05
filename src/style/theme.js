@@ -2,7 +2,7 @@
  * @Author: Fangyu Kung
  * @Date: 2024-09-04 14:22:49
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-09-05 06:08:21
+ * @LastEditTime: 2024-09-05 08:06:55
  * @FilePath: /library_seat_tracker/src/style/theme.js
  */
 import { createTheme } from "@mui/material/styles";
@@ -41,6 +41,9 @@ export const theme = createTheme({
     warning: {
       main: "#FD853A",
     },
+    white: {
+      main: "#FFFFFF",
+    },
   },
   typography: {
     fontFamily: '"PingFang TC", "Helvetica", "Arial", sans-serif',
@@ -77,7 +80,7 @@ export const theme = createTheme({
     body: {
       fontSize: "0.875rem",
       lineHeight: "1.375rem",
-      fontWeight: 500,
+      fontWeight: 400,
     },
     bodySemiBold: {
       fontSize: "0.875rem",
