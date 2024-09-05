@@ -20,6 +20,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import BaseCard from "../common/card/BaseCardStyle";
 import { BaseChips } from "../common/utility/ChipsStyle";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
 const LocationCard = ({ info }) => {
   const { id, name, image, address, vacancy } = info;
@@ -30,14 +31,14 @@ const LocationCard = ({ info }) => {
       <CardActionArea onClick={() => navigate(`/librarydetail/${id}`)}>
         <Box
           sx={{
-            borderRadius: "10px",
+            borderRadius: "8px",
             overflow: "hidden",
             margin: "16px 16px 0",
           }}
         >
           <CardMedia
             sx={{
-              height: 88,
+              width: "100%",
             }}
             component="img"
             image={image}
@@ -50,14 +51,24 @@ const LocationCard = ({ info }) => {
               display: "flex",
               alignItems: "baseline",
               justifyContent: "space-between",
+              mb: "4px",
             }}
           >
             <Typography gutterBottom variant="h3SemiBold" component="div">
               {name}
             </Typography>
             <BaseChips
-              sx={{ marginLeft: "8px", color: "success.main" }}
-              label="•尚有空位"
+              sx={{
+                marginLeft: "8px",
+                color: "success.main",
+                fontWeight: "800",
+              }}
+              label={
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <FiberManualRecordIcon fontSize="10px" sx={{marginRight:'4px'}}/>
+                  尚有空位
+                </Box>
+              }
             />
           </Box>
           <Link
@@ -70,7 +81,6 @@ const LocationCard = ({ info }) => {
             rel="noopener noreferrer"
             sx={{
               color: "text.secondary",
-              marginLeft: "8px",
               textDecoration: "underline",
               display: "flex",
               alignItems: "center",
@@ -78,7 +88,7 @@ const LocationCard = ({ info }) => {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src="/icons/icon_location_search_24.svg"
+              src="/icons/icon_location.svg"
               alt="位置"
               style={{ marginRight: "8px" }}
             />
@@ -86,7 +96,7 @@ const LocationCard = ({ info }) => {
           </Link>
         </CardContent>
       </CardActionArea>
-      <Divider />
+      <Divider orientation="horizontal" variant="middle" flexItem />
       <CardActions>
         <Button
           sx={{

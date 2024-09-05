@@ -12,10 +12,10 @@ import { theme } from "../../../style/theme"; // 导入自定义主题
 const BaseChips = styled(Chip)(() => {
   return {
     minWidth: "78px",
-    padding: "2px 4px",
+    padding: "2px 0px",
     height: "25px",
     backgroundColor: theme.palette.grey.main,
-    fontSize: theme.typography.body.fontSize,
+    fontSize: theme.typography.captionSemiBold.fontSize,
     borderRadius: "6px",
   };
 });
