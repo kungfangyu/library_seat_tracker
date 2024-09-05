@@ -2,7 +2,7 @@
  * @Author: Fangyu Kung
  * @Date: 2024-09-05 08:48:40
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-09-05 08:53:33
+ * @LastEditTime: 2024-09-05 18:40:15
  * @FilePath: /library_seat_tracker/src/components/libraryList/LocationCard.js
  */
 
@@ -14,16 +14,20 @@ import {
   CardContent,
   CardMedia,
   Divider,
+  Link,
   Typography,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import BaseCard from "../common/card/BaseCardStyle";
-import BaseChips from "../common/utility/ChipsStyle";
+import { BaseChips } from "../common/utility/ChipsStyle";
 
 const LocationCard = ({ info }) => {
-  const { name, image, address, vacancy } = info;
+  const { id, name, image, address, vacancy } = info;
+  const navigate = useNavigate();
+
   return (
     <BaseCard>
-      <CardActionArea>
+      <CardActionArea onClick={() => navigate(`/librarydetail/${id}`)}>
         <Box
           sx={{
             borderRadius: "10px",
@@ -56,19 +60,30 @@ const LocationCard = ({ info }) => {
               label="•尚有空位"
             />
           </Box>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <img src="/icons/icon_location_search_24.svg" alt="seat" />
-            <Typography
-              variant="body"
-              sx={{
-                color: "text.secondary",
-                marginLeft: "8px",
-                textDecoration: "underline",
-              }}
-            >
-              {address}
-            </Typography>
-          </Box>
+          <Link
+            component="a"
+            variant="body"
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+              address
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              color: "text.secondary",
+              marginLeft: "8px",
+              textDecoration: "underline",
+              display: "flex",
+              alignItems: "center",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src="/icons/icon_location_search_24.svg"
+              alt="位置"
+              style={{ marginRight: "8px" }}
+            />
+            {address}
+          </Link>
         </CardContent>
       </CardActionArea>
       <Divider />

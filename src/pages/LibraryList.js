@@ -5,9 +5,9 @@
  * @LastEditTime: 2024-09-05 08:53:56
  * @FilePath: /library_seat_tracker/src/pages/LibraryList.js
  */
-import { Box, CssBaseline, Typography } from "@mui/material";
+import { CssBaseline, Typography } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-import Wrapper from "../components/common/utility/WrapperStyle";
+import { Header, Wrapper } from "../components/common/utility/LayoutStyle";
 import LocationCard from "../components/libraryList/LocationCard";
 import { libraryListData } from "../data/mockData";
 import { theme } from "../style/theme";
@@ -16,17 +16,11 @@ const LibraryList = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box
-        sx={{
-          padding: "16px",
-          backgroundColor: "primary.main",
-          textAlign: "center",
-        }}
-      >
+      <Header>
         <Typography color="white.main" variant="h3SemiBold">
           台北市立圖書館座位查詢
         </Typography>
-      </Box>
+      </Header>
       <Wrapper>
         {libraryListData.map((item) => (
           <LocationCard key={item.id} info={item} />
