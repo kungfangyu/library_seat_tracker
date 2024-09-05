@@ -22,9 +22,9 @@ import { AvatarChips } from "../components/common/utility/ChipsStyle";
 import { Header, Wrapper } from "../components/common/utility/LayoutStyle";
 import { theme } from "../style/theme";
 import BaseCard from "../components/common/card/BaseCardStyle";
+import FacilityItem from "../components/libraryDetail/FacilityItem";
 
-const LibraryDetail = (info) => {
-  const { id, name, image, address, vacancy } = info;
+const LibraryDetail = () => {
   const navigate = useNavigate();
 
   return (
@@ -137,27 +137,7 @@ const LibraryDetail = (info) => {
                 一樓
               </Typography>
               <Stack mt={1}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <img
-                    src="/icons/icon_info.svg"
-                    alt="配置"
-                    style={{ marginRight: "8px" }}
-                  />
-                  <Typography
-                    variant="body"
-                    sx={{
-                      color: "text.third",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    24小時自助還書機
-                  </Typography>
-                </Box>
+                <FacilityItem text="24小時自助還書機" />
               </Stack>
             </BaseCard>
 
@@ -172,71 +152,12 @@ const LibraryDetail = (info) => {
                 三樓
               </Typography>
               <Stack mt={1} spacing={1}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <img
-                    src="/icons/icon_info.svg"
-                    alt="配置"
-                    style={{ marginRight: "8px" }}
-                  />
-                  <Typography
-                    variant="body"
-                    sx={{
-                      color: "text.third",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    自修室
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <img
-                    src="/icons/icon_info.svg"
-                    alt="配置"
-                    style={{ marginRight: "8px" }}
-                  />
-                  <Typography
-                    variant="body"
-                    sx={{
-                      color: "text.third",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    筆記型電腦區
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <img
-                    src="/icons/icon_info.svg"
-                    alt="配置"
-                    style={{ marginRight: "8px" }}
-                  />
-                  <Typography
-                    variant="body"
-                    sx={{
-                      color: "text.third",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    討論小間
-                  </Typography>
-                </Box>
+                <FacilityItem text="自修室" />
+                <FacilityItem text="筆記型電腦區" />
+                <FacilityItem text="討論小間" />
               </Stack>
             </BaseCard>
+            
             <BaseCard
               sx={{
                 marginTop: "0px",
@@ -254,262 +175,22 @@ const LibraryDetail = (info) => {
                 divider={<Divider orientation="vertical" flexItem />}
               >
                 <Stack spacing={1} direction="column">
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src="/icons/icon_info.svg"
-                      alt="配置"
-                      style={{ marginRight: "8px" }}
-                    />
-                    <Typography
-                      variant="body"
-                      sx={{
-                        color: "text.third",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      綜合服務臺
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src="/icons/icon_info.svg"
-                      alt="配置"
-                      style={{ marginRight: "8px" }}
-                    />
-                    <Typography
-                      variant="body"
-                      sx={{
-                        color: "text.third",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      館藏特色區
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src="/icons/icon_info.svg"
-                      alt="配置"
-                      style={{ marginRight: "8px" }}
-                    />
-                    <Typography
-                      variant="body"
-                      sx={{
-                        color: "text.third",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      期刊報紙閱覽區
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src="/icons/icon_info.svg"
-                      alt="配置"
-                      style={{ marginRight: "8px" }}
-                    />
-                    <Typography
-                      variant="body"
-                      sx={{
-                        color: "text.third",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      參考資料區
-                    </Typography>
-                  </Box>
+                  <FacilityItem text="綜合服務臺" />
+                  <FacilityItem text="館藏特色區" />
+                  <FacilityItem text="期刊報紙閱覽區" />
+                  <FacilityItem text="參考資料區" />
                 </Stack>
                 <Stack spacing={1} direction="column">
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src="/icons/icon_info.svg"
-                      alt="配置"
-                      style={{ marginRight: "8px" }}
-                    />
-                    <Typography
-                      variant="body"
-                      sx={{
-                        color: "text.third",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      視聽資料區
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src="/icons/icon_info.svg"
-                      alt="配置"
-                      style={{ marginRight: "8px" }}
-                    />
-                    <Typography
-                      variant="body"
-                      sx={{
-                        color: "text.third",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      多功能活動室
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src="/icons/icon_info.svg"
-                      alt="配置"
-                      style={{ marginRight: "8px" }}
-                    />
-                    <Typography
-                      variant="body"
-                      sx={{
-                        color: "text.third",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      兒童閱覽室
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src="/icons/icon_info.svg"
-                      alt="配置"
-                      style={{ marginRight: "8px" }}
-                    />
-                    <Typography
-                      variant="body"
-                      sx={{
-                        color: "text.third",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      書庫區
-                    </Typography>
-                  </Box>
+                  <FacilityItem text="視聽資料區" />
+                  <FacilityItem text="多功能活動室" />
+                  <FacilityItem text="兒童閱覽室" />
+                  <FacilityItem text="書庫區" />
                 </Stack>
                 <Stack spacing={1} direction="column">
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src="/icons/icon_info.svg"
-                      alt="配置"
-                      style={{ marginRight: "8px" }}
-                    />
-                    <Typography
-                      variant="body"
-                      sx={{
-                        color: "text.third",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      預約書自助取書區
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src="/icons/icon_info.svg"
-                      alt="配置"
-                      style={{ marginRight: "8px" }}
-                    />
-                    <Typography
-                      variant="body"
-                      sx={{
-                        color: "text.third",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      資訊檢索區 
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src="/icons/icon_info.svg"
-                      alt="配置"
-                      style={{ marginRight: "8px" }}
-                    />
-                    <Typography
-                      variant="body"
-                      sx={{
-                        color: "text.third",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      WebPAC書目查詢區
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src="/icons/icon_info.svg"
-                      alt="配置"
-                      style={{ marginRight: "8px" }}
-                    />
-                    <Typography
-                      variant="body"
-                      sx={{
-                        color: "text.third",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      影印設備
-                    </Typography>
-                  </Box>
+                  <FacilityItem text=" 預約書自助取書區" />
+                  <FacilityItem text="資訊檢索區" />
+                  <FacilityItem text="WebPAC書目查詢區" />
+                  <FacilityItem text="影印設備" />
                 </Stack>
               </Stack>
             </BaseCard>
