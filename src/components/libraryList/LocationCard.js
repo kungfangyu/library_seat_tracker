@@ -2,10 +2,11 @@
  * @Author: Fangyu Kung
  * @Date: 2024-09-05 08:48:40
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-09-05 18:40:15
+ * @LastEditTime: 2024-09-06 18:21:59
  * @FilePath: /library_seat_tracker/src/components/libraryList/LocationCard.js
  */
 
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import {
   Box,
   Button,
@@ -20,7 +21,6 @@ import {
 import { useNavigate } from "react-router-dom";
 import BaseCard from "../common/card/BaseCardStyle";
 import { BaseChips } from "../common/utility/ChipsStyle";
-import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
 const LocationCard = ({ info }) => {
   const { id, name, image, address, vacancy } = info;
@@ -64,8 +64,11 @@ const LocationCard = ({ info }) => {
                 fontWeight: "800",
               }}
               label={
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <FiberManualRecordIcon fontSize="10px" sx={{marginRight:'4px'}}/>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <FiberManualRecordIcon
+                    fontSize="10px"
+                    sx={{ marginRight: "4px" }}
+                  />
                   尚有空位
                 </Box>
               }

@@ -2,7 +2,7 @@
  * @Author: Fangyu Kung
  * @Date: 2024-09-05 08:55:26
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-09-06 13:58:13
+ * @LastEditTime: 2024-09-06 18:31:44
  * @FilePath: /library_seat_tracker/src/pages/LibraryDetail.js
  */
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
@@ -22,9 +22,9 @@ import { useNavigate } from "react-router-dom";
 import BaseCard from "../components/common/card/BaseCardStyle";
 import { AvatarChips } from "../components/common/utility/ChipsStyle";
 import { Header, Wrapper } from "../components/common/utility/LayoutStyle";
+import TextBox from "../components/common/utility/TextBoxStyle";
 import FacilityItem from "../components/libraryDetail/FacilityItem";
 import { theme } from "../style/theme";
-
 const LibraryDetail = () => {
   const navigate = useNavigate();
 
@@ -250,29 +250,137 @@ const LibraryDetail = () => {
                 <Typography variant="h3SemiBold">三樓</Typography>
                 <Typography variant="h3SemiBold">自修室</Typography>
               </Box>
-              <PieChart
-                colors={[
-                  theme.palette.primary.main,
-                  theme.palette.secondary.main,
-                ]}
-                series={[
-                  {
-                    arcLabel: (item) => `${item.label} (${item.value})`,
-                    arcLabelMinAngle: 45,
-                    data,
-                  },
-                ]}
-                sx={{
-                  [`& .${pieArcLabelClasses.root}`]: {
-                    fill: "white",
-                    fontWeight: "bold",
-                    fontSize: "12px",
-                  },
-                }}
-                {...size}
-              />
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <PieChart
+                  colors={[
+                    theme.palette.primary.main,
+                    theme.palette.secondary.main,
+                  ]}
+                  series={[
+                    {
+                      arcLabel: (item) => `${item.label} (${item.value})`,
+                      arcLabelMinAngle: 45,
+                      data,
+                    },
+                  ]}
+                  sx={{
+                    [`& .${pieArcLabelClasses.root}`]: {
+                      fill: "white",
+                      fontWeight: "bold",
+                      fontSize: "12px",
+                    },
+                  }}
+                  {...size}
+                />
+              </Box>
               <Divider />
-              <Box></Box>
+              <Stack
+                direction="row"
+                spacing={2}
+                my={2}
+                sx={{
+                  width: "100%",
+                  justifyContent: "space-between",
+                }}
+              >
+                <TextBox
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    background: theme.palette.grey.dark,
+                  }}
+                >
+                  <Typography
+                    variant="h3SemiBold"
+                    sx={{
+                      textAlign: "center",
+                      marginBottom: "4px",
+                      color: theme.palette.white.main,
+                    }}
+                  >
+                    總座位數
+                  </Typography>
+                  <Typography
+                    variant="h3SemiBold"
+                    sx={{
+                      textAlign: "center",
+                      color: theme.palette.white.main,
+                    }}
+                  >
+                    100
+                  </Typography>
+                </TextBox>
+                <TextBox
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    background: theme.palette.secondary.main,
+                  }}
+                >
+                  <Typography
+                    variant="h3SemiBold"
+                    sx={{
+                      textAlign: "center",
+                      marginBottom: "4px",
+                      color: theme.palette.white.main,
+                    }}
+                  >
+                    已使用座位
+                  </Typography>
+                  <Typography
+                    variant="h3SemiBold"
+                    sx={{
+                      textAlign: "center",
+                      color: theme.palette.white.main,
+                    }}
+                  >
+                    82
+                  </Typography>
+                </TextBox>
+                <TextBox
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    background: theme.palette.primary.main,
+                  }}
+                >
+                  <Typography
+                    variant="h3SemiBold"
+                    sx={{
+                      textAlign: "center",
+                      marginBottom: "4px",
+                      color: theme.palette.white.main,
+                    }}
+                  >
+                    剩餘座位
+                  </Typography>
+                  <Typography
+                    variant="h3SemiBold"
+                    sx={{
+                      textAlign: "center",
+                      color: theme.palette.white.main,
+                    }}
+                  >
+                    53
+                  </Typography>
+                </TextBox>
+              </Stack>
+
+              <Divider pt={2} />
+              <Box mt={2} display="flex" justifyContent="space-between">
+                <Typography variant="caption" color="text.third">
+                  資料來源:教育部圖書館
+                </Typography>
+                <Typography variant="caption" color="text.third">
+                  更新時間:2024/06/17 08:47:43
+                </Typography>
+              </Box>
             </BaseCard>
           </Box>
         </Box>
