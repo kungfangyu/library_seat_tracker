@@ -2,17 +2,32 @@
  * @Author: Fangyu Kung
  * @Date: 2024-09-05 01:49:03
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-09-05 08:53:56
+ * @LastEditTime: 2024-09-06 15:51:46
  * @FilePath: /library_seat_tracker/src/pages/LibraryList.js
  */
 import { CssBaseline, Typography } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
+import { useEffect, useState } from "react";
+import { getLibraryList } from "../apis/libraryList";
 import { Header, Wrapper } from "../components/common/utility/LayoutStyle";
 import LocationCard from "../components/libraryList/LocationCard";
 import { libraryListData } from "../data/mockData";
 import { theme } from "../style/theme";
 
 const LibraryList = () => {
+  const [libraryList, setLibraryList] = useState([]);
+  useEffect(() => {
+    const fetchLibraries = async () => {
+      try {
+        const res = await getLibraryList();
+        console.log(res);
+        setLibraryList(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchLibraries();
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
