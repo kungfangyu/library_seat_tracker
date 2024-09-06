@@ -2,7 +2,7 @@
  * @Author: Fangyu Kung
  * @Date: 2024-09-05 08:55:26
  * @LastEditors: Do not edit
- * @LastEditTime: 2024-09-05 19:06:50
+ * @LastEditTime: 2024-09-06 13:58:13
  * @FilePath: /library_seat_tracker/src/pages/LibraryDetail.js
  */
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
@@ -13,19 +13,30 @@ import {
   Divider,
   IconButton,
   Link,
-  Typography,
   Stack,
+  Typography,
 } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
+import { PieChart, pieArcLabelClasses } from "@mui/x-charts/PieChart";
 import { useNavigate } from "react-router-dom";
+import BaseCard from "../components/common/card/BaseCardStyle";
 import { AvatarChips } from "../components/common/utility/ChipsStyle";
 import { Header, Wrapper } from "../components/common/utility/LayoutStyle";
-import { theme } from "../style/theme";
-import BaseCard from "../components/common/card/BaseCardStyle";
 import FacilityItem from "../components/libraryDetail/FacilityItem";
+import { theme } from "../style/theme";
 
 const LibraryDetail = () => {
   const navigate = useNavigate();
+
+  const data = [
+    { value: 53, label: "空位" },
+    { value: 19, label: "已使用" },
+  ];
+
+  const size = {
+    width: 300,
+    height: 300,
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -157,7 +168,7 @@ const LibraryDetail = () => {
                 <FacilityItem text="討論小間" />
               </Stack>
             </BaseCard>
-            
+
             <BaseCard
               sx={{
                 marginTop: "0px",
@@ -232,6 +243,37 @@ const LibraryDetail = () => {
               label="筆電區"
               variant="outlined"
             />
+          </Box>
+          <Box>
+            <BaseCard sx={{ padding: 2 }}>
+              <Box display="flex" justifyContent="space-between">
+                <Typography variant="h3SemiBold">三樓</Typography>
+                <Typography variant="h3SemiBold">自修室</Typography>
+              </Box>
+              <PieChart
+                colors={[
+                  theme.palette.primary.main,
+                  theme.palette.secondary.main,
+                ]}
+                series={[
+                  {
+                    arcLabel: (item) => `${item.label} (${item.value})`,
+                    arcLabelMinAngle: 45,
+                    data,
+                  },
+                ]}
+                sx={{
+                  [`& .${pieArcLabelClasses.root}`]: {
+                    fill: "white",
+                    fontWeight: "bold",
+                    fontSize: "12px",
+                  },
+                }}
+                {...size}
+              />
+              <Divider />
+              <Box></Box>
+            </BaseCard>
           </Box>
         </Box>
       </Wrapper>
