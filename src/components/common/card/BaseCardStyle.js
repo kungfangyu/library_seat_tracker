@@ -11,9 +11,10 @@ import { styled } from "@mui/material/styles";
 const BaseCard = styled(Card)(() => {
   return {
     maxWidth: "100%",
-    borderRadius: "10px",
+    borderRadius: "16px",
     marginTop: "16px",
-  };
+    boxShadow: "0px 4px 12px 0px rgba(0, 0, 0, 0.04)",
+  }
 });
 
 export default BaseCard;
